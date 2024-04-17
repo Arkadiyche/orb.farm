@@ -5040,6 +5040,10 @@ skiplist.push("Zoop");
 skiplist.push("Nitrogen");
 skiplist.push("Plastic"); // skiplist.push("GoldFish");
 
+var RusSpecies = Object.freeze({
+  "Stone": "Камень",
+  "fish": "Рыба"
+});
 window.species = _crate_pkg_sandtable__WEBPACK_IMPORTED_MODULE_3__["Species"];
 var pallette_data = Object(_render_js__WEBPACK_IMPORTED_MODULE_5__["pallette"])();
 
@@ -5066,9 +5070,11 @@ var ElementButton = function ElementButton(name, selectedElement, setElement) {
   var selected = elementID == selectedElement;
   var background = "inherit";
   var text = name;
+  var rusText = RusSpecies[name];
 
   if (name == "Air") {
     text = "Clear";
+    rusText = "Очис.";
   }
 
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -5084,7 +5090,7 @@ var ElementButton = function ElementButton(name, selectedElement, setElement) {
       color: name == "Air" ? "black" : "white",
       filter: selected || "saturate(0.4) "
     }
-  }, "  ", text, "  ");
+  }, "  ", rusText, "  ");
 };
 
 var Index =
@@ -7140,4 +7146,4 @@ function getTchotchkes() {
 /***/ })
 
 }]);
-//# sourceMappingURL=0.876283a8ac206b28550c.js.map
+//# sourceMappingURL=0.8d10a7d1cec9110ce1b9.js.map

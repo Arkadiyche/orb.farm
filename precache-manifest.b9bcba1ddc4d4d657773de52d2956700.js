@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a1f6286131220132e2df",
-    "url": "/0.2a9450e08e7d32c195d1.js"
+    "revision": "e150ea2f46290283b0bd",
+    "url": "/0.45c540a645a63659e2d6.js"
   },
   {
     "revision": "f752b811006e515d8143",
     "url": "/1.c7ecfafe659f48c07f1f.js"
   },
   {
-    "revision": "a1f6286131220132e2df",
+    "revision": "e150ea2f46290283b0bd",
     "url": "/140d3c9a59af4c726969.module.wasm"
   },
   {
@@ -1412,11 +1412,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ico/yin-yang.ico"
   },
   {
-    "revision": "e92a892a7ef62c3a16d90915234c2f6f",
+    "revision": "b63bdfe323cc6318b47e555f83d87639",
     "url": "/index.html"
   },
   {
-    "revision": "f5e3335294bdea2faa31",
-    "url": "/main.71fee3408b5c3d5ab0d7.js"
+    "revision": "0305d2b067a9aade99a4",
+    "url": "/main.05f48625f3321ab076b4.js"
   }
 ]);
