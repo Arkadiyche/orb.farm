@@ -1,19 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "055ed59c9d15e3189fd0",
-    "url": "/0.5c967deb1d7798f38dd1.js"
+    "revision": "a1f6286131220132e2df",
+    "url": "/0.2a9450e08e7d32c195d1.js"
   },
   {
     "revision": "f752b811006e515d8143",
     "url": "/1.c7ecfafe659f48c07f1f.js"
   },
   {
-    "revision": "919080639f292be795445ee0112187c7",
-    "url": "/assets/2014.pdf"
-  },
-  {
-    "revision": "a493ba0aa0b8ec8068d786d7248bb92c",
-    "url": "/assets/browserconfig.xml"
+    "revision": "a1f6286131220132e2df",
+    "url": "/140d3c9a59af4c726969.module.wasm"
   },
   {
     "revision": "1cd63eb39beae03326fc7f416ae0a8ec",
@@ -28,84 +24,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/bubblesmall.png"
   },
   {
-    "revision": "7fbf29d8c6d6a36a9fce5232a3af4acb",
-    "url": "/assets/daphnia.gif"
-  },
-  {
-    "revision": "2e4e40397dd877a4b5ab6125b4353c30",
-    "url": "/assets/daphnia2.gif"
-  },
-  {
     "revision": "e82b4e52ec774525886820d6664e0b5b",
     "url": "/assets/daphniaAlpha.gif"
   },
   {
-    "revision": "bce7a1b8bf82d7f3fcd9a240302111be",
-    "url": "/assets/daphniaAlphaBig.gif"
-  },
-  {
-    "revision": "cbcbf2cc4ae860b57186b431ee78aa51",
-    "url": "/assets/daphniagif2.gif"
-  },
-  {
-    "revision": "0801a83800516eef7c90582692f9217d",
-    "url": "/assets/favicon.ico"
-  },
-  {
     "revision": "283ce30c80e2d1eeb6de8436bbfd577c",
     "url": "/assets/gif.worker.js"
-  },
-  {
-    "revision": "3ed59c98ec041d25145e97a30e3e3a0c",
-    "url": "/assets/html_code.html"
-  },
-  {
-    "revision": "7c756fce1f89f24b100bd4f08b36383d",
-    "url": "/assets/noise.png"
-  },
-  {
-    "revision": "74ef2aee81074b7fcac60dd1e645846b",
-    "url": "/assets/pixelmix-webfont.woff"
-  },
-  {
-    "revision": "5eb443a04d7edf327cdbeaa615391eb2",
-    "url": "/assets/pixelmix-webfont.woff2"
-  },
-  {
-    "revision": "2db009d884b526dbd3ccd985cb52de25",
-    "url": "/assets/pixelmix.ttf"
-  },
-  {
-    "revision": "183758e4fa68ade22e97aa2120a99cc9",
-    "url": "/assets/pixelmix_bold.ttf"
-  },
-  {
-    "revision": "5fb44f27fb627550abfc74af2c3a71c0",
-    "url": "/assets/rainyhearts-webfont.woff"
-  },
-  {
-    "revision": "d2b14f2f6ce71130cfd938ddd214ba12",
-    "url": "/assets/rainyhearts-webfont.woff2"
-  },
-  {
-    "revision": "069fb64d1f685b25507f0ece8707f4ab",
-    "url": "/assets/rainyhearts.ttf"
-  },
-  {
-    "revision": "da628cd7d4ae0120330cb9e37238829a",
-    "url": "/assets/site.webmanifest"
-  },
-  {
-    "revision": "4e285e802b7b5cf957dcce67494ef7b9",
-    "url": "/assets/thumbnail.png"
-  },
-  {
-    "revision": "c3a696af3063364bbcc9f160e144560a",
-    "url": "/assets/times-16-regular.woff"
-  },
-  {
-    "revision": "055ed59c9d15e3189fd0",
-    "url": "/b31a2c245211bd01d0d6.module.wasm"
   },
   {
     "revision": "283ce30c80e2d1eeb6de8436bbfd577c",
@@ -1488,19 +1412,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ico/yin-yang.ico"
   },
   {
-    "revision": "1ab02ffa3614de7c9ce52f468472314d",
+    "revision": "f7832d1e7613442c5777bd3e2bbc292d",
     "url": "/index.html"
   },
   {
-    "revision": "7f86c4284dcd38da6124",
-    "url": "/main.6970b7257fd643e676a5.js"
-  },
-  {
-    "revision": "cff710e53c6cd9c29a51289f5eedd352",
-    "url": "/manifest.json"
-  },
-  {
-    "revision": "e66062c555ec72f2e329b7d2979d3bde",
-    "url": "/styles.css"
+    "revision": "f5e3335294bdea2faa31",
+    "url": "/main.71fee3408b5c3d5ab0d7.js"
   }
 ]);

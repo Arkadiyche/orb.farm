@@ -121,8 +121,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 var wasm;
 function __wbg_set_wasm(val) {
   wasm = val;
@@ -173,30 +171,8 @@ function addHeapObject(obj) {
   if (heap_next === heap.length) heap.push(heap.length + 1);
   var idx = heap_next;
   heap_next = heap[idx];
-  if (typeof heap_next !== 'number') throw new Error('corrupt heap');
   heap[idx] = obj;
   return idx;
-}
-
-function _assertNum(n) {
-  if (typeof n !== 'number') throw new Error("expected a number argument, found ".concat(_typeof(n)));
-}
-
-function logError(f, args) {
-  try {
-    return f.apply(this, args);
-  } catch (e) {
-    var error = function () {
-      try {
-        return e instanceof Error ? "".concat(e.message, "\n\nStack:\n").concat(e.stack) : e.toString();
-      } catch (_) {
-        return "<failed to stringify thrown value>";
-      }
-    }();
-
-    console.error("wasm-bindgen: imported JS function that was not marked as `catch` threw an error:", error);
-    throw e;
-  }
 }
 
 function notDefined(what) {
@@ -266,8 +242,6 @@ var Cell =
 function () {
   function Cell() {
     _classCallCheck(this, Cell);
-
-    throw new Error('cannot invoke `new` directly');
   }
 
   _createClass(Cell, [{
@@ -303,8 +277,6 @@ var Light =
 function () {
   function Light() {
     _classCallCheck(this, Light);
-
-    throw new Error('cannot invoke `new` directly');
   }
 
   _createClass(Light, [{
@@ -340,8 +312,6 @@ var Pixel =
 function () {
   function Pixel() {
     _classCallCheck(this, Pixel);
-
-    throw new Error('cannot invoke `new` directly');
   }
 
   _createClass(Pixel, [{
@@ -377,8 +347,6 @@ var Universe =
 function () {
   function Universe() {
     _classCallCheck(this, Universe);
-
-    throw new Error('cannot invoke `new` directly');
   }
 
   _createClass(Universe, [{
@@ -402,10 +370,6 @@ function () {
   }, {
     key: "reset",
     value: function reset() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       wasm.universe_reset(this.__wbg_ptr);
     }
     /**
@@ -414,10 +378,6 @@ function () {
   }, {
     key: "calculate_light",
     value: function calculate_light() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       wasm.universe_calculate_light(this.__wbg_ptr);
     }
     /**
@@ -431,14 +391,6 @@ function () {
   }, {
     key: "cast_ray",
     value: function cast_ray(brightness, x, y, dx, dy) {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
-      _assertNum(x);
-
-      _assertNum(y);
-
       wasm.universe_cast_ray(this.__wbg_ptr, brightness, x, y, dx, dy);
     }
     /**
@@ -447,10 +399,6 @@ function () {
   }, {
     key: "tick",
     value: function tick() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       wasm.universe_tick(this.__wbg_ptr);
     }
     /**
@@ -460,10 +408,6 @@ function () {
   }, {
     key: "width",
     value: function width() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       var ret = wasm.universe_width(this.__wbg_ptr);
       return ret;
     }
@@ -474,10 +418,6 @@ function () {
   }, {
     key: "height",
     value: function height() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       var ret = wasm.universe_height(this.__wbg_ptr);
       return ret;
     }
@@ -488,10 +428,6 @@ function () {
   }, {
     key: "o2",
     value: function o2() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       var ret = wasm.universe_o2(this.__wbg_ptr);
       return ret >>> 0;
     }
@@ -502,10 +438,6 @@ function () {
   }, {
     key: "total_gas",
     value: function total_gas() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       var ret = wasm.universe_total_gas(this.__wbg_ptr);
       return ret >>> 0;
     }
@@ -516,10 +448,6 @@ function () {
   }, {
     key: "co2",
     value: function co2() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       var ret = wasm.universe_co2(this.__wbg_ptr);
       return ret >>> 0;
     }
@@ -530,10 +458,6 @@ function () {
   }, {
     key: "cells",
     value: function cells() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       var ret = wasm.universe_cells(this.__wbg_ptr);
       return ret >>> 0;
     }
@@ -544,10 +468,6 @@ function () {
   }, {
     key: "lights",
     value: function lights() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       var ret = wasm.universe_lights(this.__wbg_ptr);
       return ret >>> 0;
     }
@@ -558,10 +478,6 @@ function () {
   }, {
     key: "sprite",
     value: function sprite() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       var ret = wasm.universe_sprite(this.__wbg_ptr);
       return ret >>> 0;
     }
@@ -574,14 +490,6 @@ function () {
   }, {
     key: "place_sprite",
     value: function place_sprite(xi, yi, typebuf) {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
-      _assertNum(xi);
-
-      _assertNum(yi);
-
       wasm.universe_place_sprite(this.__wbg_ptr, xi, yi, addHeapObject(typebuf));
     }
     /**
@@ -594,18 +502,6 @@ function () {
   }, {
     key: "paint",
     value: function paint(x, y, size, species) {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
-      _assertNum(x);
-
-      _assertNum(y);
-
-      _assertNum(size);
-
-      _assertNum(species);
-
       wasm.universe_paint(this.__wbg_ptr, x, y, size, species);
     }
     /**
@@ -614,10 +510,6 @@ function () {
   }, {
     key: "push_undo",
     value: function push_undo() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       wasm.universe_push_undo(this.__wbg_ptr);
     }
     /**
@@ -626,10 +518,6 @@ function () {
   }, {
     key: "pop_undo",
     value: function pop_undo() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       wasm.universe_pop_undo(this.__wbg_ptr);
     }
     /**
@@ -638,10 +526,6 @@ function () {
   }, {
     key: "flush_undos",
     value: function flush_undos() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       wasm.universe_flush_undos(this.__wbg_ptr);
     }
     /**
@@ -651,12 +535,6 @@ function () {
   }, {
     key: "set_time",
     value: function set_time(t) {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
-      _assertNum(t);
-
       wasm.universe_set_time(this.__wbg_ptr, t);
     }
     /**
@@ -666,12 +544,6 @@ function () {
   }, {
     key: "set_o2",
     value: function set_o2(v) {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
-      _assertNum(v);
-
       wasm.universe_set_o2(this.__wbg_ptr, v);
     }
     /**
@@ -680,10 +552,6 @@ function () {
   }, {
     key: "inc_time",
     value: function inc_time() {
-      if (this.__wbg_ptr == 0) throw new Error('Attempt to use a moved value');
-
-      _assertNum(this.__wbg_ptr);
-
       wasm.universe_inc_time(this.__wbg_ptr);
     }
     /**
@@ -704,10 +572,6 @@ function () {
   }, {
     key: "new",
     value: function _new(width, height) {
-      _assertNum(width);
-
-      _assertNum(height);
-
       var ret = wasm.universe_new(width, height);
       return Universe.__wrap(ret);
     }
@@ -719,34 +583,23 @@ function __wbindgen_object_drop_ref(arg0) {
   takeObject(arg0);
 }
 ;
-function __wbg_buffer_12d079cc21e14bdb() {
-  return logError(function (arg0) {
-    var ret = getObject(arg0).buffer;
-    return addHeapObject(ret);
-  }, arguments);
+function __wbg_buffer_12d079cc21e14bdb(arg0) {
+  var ret = getObject(arg0).buffer;
+  return addHeapObject(ret);
 }
 ;
-function __wbg_new_63b92bc8671ed464() {
-  return logError(function (arg0) {
-    var ret = new Uint8Array(getObject(arg0));
-    return addHeapObject(ret);
-  }, arguments);
+function __wbg_new_63b92bc8671ed464(arg0) {
+  var ret = new Uint8Array(getObject(arg0));
+  return addHeapObject(ret);
 }
 ;
-function __wbg_set_a47bac70306a19a7() {
-  return logError(function (arg0, arg1, arg2) {
-    getObject(arg0).set(getObject(arg1), arg2 >>> 0);
-  }, arguments);
+function __wbg_set_a47bac70306a19a7(arg0, arg1, arg2) {
+  getObject(arg0).set(getObject(arg1), arg2 >>> 0);
 }
 ;
-function __wbg_length_c20a40f15020d68a() {
-  return logError(function (arg0) {
-    var ret = getObject(arg0).length;
-
-    _assertNum(ret);
-
-    return ret;
-  }, arguments);
+function __wbg_length_c20a40f15020d68a(arg0) {
+  var ret = getObject(arg0).length;
+  return ret;
 }
 ;
 var __wbg_random_26e2d782b541ca6b = typeof Math.random == 'function' ? Math.random : notDefined('Math.random');
@@ -767,7 +620,7 @@ function __wbindgen_memory() {
 /*!*************************************!*\
   !*** ./crate/pkg/sandtable_bg.wasm ***!
   \*************************************/
-/*! exports provided: memory, __wbg_light_free, __wbg_pixel_free, __wbg_cell_free, __wbg_universe_free, universe_reset, universe_calculate_light, universe_cast_ray, universe_tick, universe_width, universe_height, universe_o2, universe_total_gas, universe_co2, universe_cells, universe_lights, universe_sprite, universe_place_sprite, universe_paint, universe_push_undo, universe_pop_undo, universe_flush_undos, universe_set_time, universe_set_o2, universe_inc_time, universe_new */
+/*! exports provided: memory, __wbg_cell_free, __wbg_universe_free, universe_reset, universe_calculate_light, universe_cast_ray, universe_tick, universe_width, universe_height, universe_o2, universe_total_gas, universe_co2, universe_cells, universe_lights, universe_sprite, universe_place_sprite, universe_paint, universe_push_undo, universe_pop_undo, universe_flush_undos, universe_set_time, universe_set_o2, universe_inc_time, universe_new, __wbg_pixel_free, __wbg_light_free */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5920,7 +5773,7 @@ function (_React$Component) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "precision highp float;\n#define GLSLIFY 1\nuniform float t;\nuniform float i;\nuniform float max_readings;\nuniform float n_readings;\nuniform float dpi;\nuniform vec2 resolution;\nuniform sampler2D data;\n\nvarying vec2 uv;\n\n// clang-format off\nvec3 hsv2rgb(vec3 c) {\n  vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);\n  vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);\n  return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);\n}\n\n//\n// Description : Array and textureless GLSL 2D/3D/4D simplex\n//               noise functions.\n//      Author : Ian McEwan, Ashima Arts.\n//  Maintainer : ijm\n//     Lastmod : 20110822 (ijm)\n//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.\n//               Distributed under the MIT License. See LICENSE file.\n//               https://github.com/ashima/webgl-noise\n//\n\nvec3 mod289_0(vec3 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec4 mod289_0(vec4 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec4 permute_0(vec4 x) {\n     return mod289_0(((x*34.0)+1.0)*x);\n}\n\nvec4 taylorInvSqrt(vec4 r)\n{\n  return 1.79284291400159 - 0.85373472095314 * r;\n}\n\nfloat snoise_0(vec3 v)\n  {\n  const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;\n  const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);\n\n// First corner\n  vec3 i  = floor(v + dot(v, C.yyy) );\n  vec3 x0 =   v - i + dot(i, C.xxx) ;\n\n// Other corners\n  vec3 g_0 = step(x0.yzx, x0.xyz);\n  vec3 l = 1.0 - g_0;\n  vec3 i1 = min( g_0.xyz, l.zxy );\n  vec3 i2 = max( g_0.xyz, l.zxy );\n\n  //   x0 = x0 - 0.0 + 0.0 * C.xxx;\n  //   x1 = x0 - i1  + 1.0 * C.xxx;\n  //   x2 = x0 - i2  + 2.0 * C.xxx;\n  //   x3 = x0 - 1.0 + 3.0 * C.xxx;\n  vec3 x1 = x0 - i1 + C.xxx;\n  vec3 x2 = x0 - i2 + C.yyy; // 2.0*C.x = 1/3 = C.y\n  vec3 x3 = x0 - D.yyy;      // -1.0+3.0*C.x = -0.5 = -D.y\n\n// Permutations\n  i = mod289_0(i);\n  vec4 p = permute_0( permute_0( permute_0(\n             i.z + vec4(0.0, i1.z, i2.z, 1.0 ))\n           + i.y + vec4(0.0, i1.y, i2.y, 1.0 ))\n           + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));\n\n// Gradients: 7x7 points over a square, mapped onto an octahedron.\n// The ring size 17*17 = 289 is close to a multiple of 49 (49*6 = 294)\n  float n_ = 0.142857142857; // 1.0/7.0\n  vec3  ns = n_ * D.wyz - D.xzx;\n\n  vec4 j = p - 49.0 * floor(p * ns.z * ns.z);  //  mod(p,7*7)\n\n  vec4 x_ = floor(j * ns.z);\n  vec4 y_ = floor(j - 7.0 * x_ );    // mod(j,N)\n\n  vec4 x = x_ *ns.x + ns.yyyy;\n  vec4 y = y_ *ns.x + ns.yyyy;\n  vec4 h = 1.0 - abs(x) - abs(y);\n\n  vec4 b0 = vec4( x.xy, y.xy );\n  vec4 b1 = vec4( x.zw, y.zw );\n\n  //vec4 s0 = vec4(lessThan(b0,0.0))*2.0 - 1.0;\n  //vec4 s1 = vec4(lessThan(b1,0.0))*2.0 - 1.0;\n  vec4 s0 = floor(b0)*2.0 + 1.0;\n  vec4 s1 = floor(b1)*2.0 + 1.0;\n  vec4 sh = -step(h, vec4(0.0));\n\n  vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;\n  vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;\n\n  vec3 p0 = vec3(a0.xy,h.x);\n  vec3 p1 = vec3(a0.zw,h.y);\n  vec3 p2 = vec3(a1.xy,h.z);\n  vec3 p3 = vec3(a1.zw,h.w);\n\n//Normalise gradients\n  vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));\n  p0 *= norm.x;\n  p1 *= norm.y;\n  p2 *= norm.z;\n  p3 *= norm.w;\n\n// Mix final noise value\n  vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);\n  m = m * m;\n  return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1),\n                                dot(p2,x2), dot(p3,x3) ) );\n  }\n\n//\n// Description : Array and textureless GLSL 2D simplex noise function.\n//      Author : Ian McEwan, Ashima Arts.\n//  Maintainer : ijm\n//     Lastmod : 20110822 (ijm)\n//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.\n//               Distributed under the MIT License. See LICENSE file.\n//               https://github.com/ashima/webgl-noise\n//\n\nvec3 mod289_1(vec3 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec2 mod289_1(vec2 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec3 permute_1(vec3 x) {\n  return mod289_1(((x*34.0)+1.0)*x);\n}\n\nfloat snoise_1(vec2 v)\n  {\n  const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0\n                      0.366025403784439,  // 0.5*(sqrt(3.0)-1.0)\n                     -0.577350269189626,  // -1.0 + 2.0 * C.x\n                      0.024390243902439); // 1.0 / 41.0\n// First corner\n  vec2 i  = floor(v + dot(v, C.yy) );\n  vec2 x0 = v -   i + dot(i, C.xx);\n\n// Other corners\n  vec2 i1;\n  //i1.x = step( x0.y, x0.x ); // x0.x > x0.y ? 1.0 : 0.0\n  //i1.y = 1.0 - i1.x;\n  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);\n  // x0 = x0 - 0.0 + 0.0 * C.xx ;\n  // x1 = x0 - i1 + 1.0 * C.xx ;\n  // x2 = x0 - 1.0 + 2.0 * C.xx ;\n  vec4 x12 = x0.xyxy + C.xxzz;\n  x12.xy -= i1;\n\n// Permutations\n  i = mod289_1(i); // Avoid truncation effects in permutation\n  vec3 p = permute_1( permute_1( i.y + vec3(0.0, i1.y, 1.0 ))\n    + i.x + vec3(0.0, i1.x, 1.0 ));\n\n  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);\n  m = m*m ;\n  m = m*m ;\n\n// Gradients: 41 points uniformly over a line, mapped onto a diamond.\n// The ring size 17*17 = 289 is close to a multiple of 41 (41*7 = 287)\n\n  vec3 x = 2.0 * fract(p * C.www) - 1.0;\n  vec3 h = abs(x) - 0.5;\n  vec3 ox = floor(x + 0.5);\n  vec3 a0 = x - ox;\n\n// Normalise gradients implicitly by scaling m\n// Approximation of: m *= inversesqrt( a0*a0 + h*h );\n  m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );\n\n// Compute final noise value at P\n  vec3 g;\n  g.x  = a0.x  * x0.x  + h.x  * x0.y;\n  g.yz = a0.yz * x12.xz + h.yz * x12.yw;\n  return 130.0 * dot(m, g);\n}\n\nhighp float random(vec2 co)\n{\n    highp float a = 12.9898;\n    highp float b = 78.233;\n    highp float c = 43758.5453;\n    highp float dt= dot(co.xy ,vec2(a,b));\n    highp float sn= mod(dt,3.14);\n    return fract(sin(sn) * c);\n}\n\n// clang-format on\n\nvoid main() {\n  vec3 color;\n  vec2 grid = floor(uv * resolution / dpi);\n  vec2 pixel = 1. / resolution;\n  vec2 pos = (uv + vec2(1.0)) * 0.5;\n\n  // pos.x = fract(pos.x + i / max_readings);\n  vec2 textCoord = vec2(pos.x, 0.5);\n  //   vec2 textCoord = (uv * vec2(0.5, 0)) + vec2(0.5);\n\n  vec4 data = texture2D(data, textCoord);\n  float v = data.x;\n  float buckets = resolution.y / 4.;\n  // discretized\n  float dV = floor(v * buckets) / buckets;\n  // float dVLeading = floor(data.a * buckets) / buckets;\n\n  float a = 1.0;\n\n  //   vec2 pos+= (i*4.)/max_readings;\n  //   lightness = min(lightness, 1.0);\n  gl_FragColor = vec4(0.98, 1., 0.98, 0.5);\n\n  //   if (\n\n  if (pos.x < n_readings / max_readings && abs(dV - pos.y) < pixel.y * 2.0) {\n    gl_FragColor = vec4(hsv2rgb(vec3(-0.1 + v * 0.8, 0.5, 0.5)), 1.0);\n\n  } else if (abs((i / max_readings) - pos.x) < pixel.x * 4.\n\n             && abs(dV - pos.y) < pixel.y * 2.0 && dV > 0.) {\n    gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);\n\n  } else if (abs((pos.y - 0.5) * resolution.y) < 2.0 &&\n             mod(pos.x * resolution.x, 8.0) > 4.0) {\n    gl_FragColor = vec4(0., 0.1, 0., 0.4);\n  }\n\n  //  else {\n  // }\n}"
+module.exports = "precision highp float;\n#define GLSLIFY 1\nuniform float t;\nuniform float i;\nuniform float max_readings;\nuniform float n_readings;\nuniform float dpi;\nuniform vec2 resolution;\nuniform sampler2D data;\n\nvarying vec2 uv;\n\n// clang-format off\nvec3 hsv2rgb(vec3 c) {\n  vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);\n  vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);\n  return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);\n}\n\n//\n// Description : Array and textureless GLSL 2D/3D/4D simplex\n//               noise functions.\n//      Author : Ian McEwan, Ashima Arts.\n//  Maintainer : ijm\n//     Lastmod : 20110822 (ijm)\n//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.\n//               Distributed under the MIT License. See LICENSE file.\n//               https://github.com/ashima/webgl-noise\n//\n\nvec3 mod289_1(vec3 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec4 mod289_1(vec4 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec4 permute_1(vec4 x) {\n     return mod289_1(((x*34.0)+1.0)*x);\n}\n\nvec4 taylorInvSqrt(vec4 r)\n{\n  return 1.79284291400159 - 0.85373472095314 * r;\n}\n\nfloat snoise_1(vec3 v)\n  {\n  const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;\n  const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);\n\n// First corner\n  vec3 i  = floor(v + dot(v, C.yyy) );\n  vec3 x0 =   v - i + dot(i, C.xxx) ;\n\n// Other corners\n  vec3 g_0 = step(x0.yzx, x0.xyz);\n  vec3 l = 1.0 - g_0;\n  vec3 i1 = min( g_0.xyz, l.zxy );\n  vec3 i2 = max( g_0.xyz, l.zxy );\n\n  //   x0 = x0 - 0.0 + 0.0 * C.xxx;\n  //   x1 = x0 - i1  + 1.0 * C.xxx;\n  //   x2 = x0 - i2  + 2.0 * C.xxx;\n  //   x3 = x0 - 1.0 + 3.0 * C.xxx;\n  vec3 x1 = x0 - i1 + C.xxx;\n  vec3 x2 = x0 - i2 + C.yyy; // 2.0*C.x = 1/3 = C.y\n  vec3 x3 = x0 - D.yyy;      // -1.0+3.0*C.x = -0.5 = -D.y\n\n// Permutations\n  i = mod289_1(i);\n  vec4 p = permute_1( permute_1( permute_1(\n             i.z + vec4(0.0, i1.z, i2.z, 1.0 ))\n           + i.y + vec4(0.0, i1.y, i2.y, 1.0 ))\n           + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));\n\n// Gradients: 7x7 points over a square, mapped onto an octahedron.\n// The ring size 17*17 = 289 is close to a multiple of 49 (49*6 = 294)\n  float n_ = 0.142857142857; // 1.0/7.0\n  vec3  ns = n_ * D.wyz - D.xzx;\n\n  vec4 j = p - 49.0 * floor(p * ns.z * ns.z);  //  mod(p,7*7)\n\n  vec4 x_ = floor(j * ns.z);\n  vec4 y_ = floor(j - 7.0 * x_ );    // mod(j,N)\n\n  vec4 x = x_ *ns.x + ns.yyyy;\n  vec4 y = y_ *ns.x + ns.yyyy;\n  vec4 h = 1.0 - abs(x) - abs(y);\n\n  vec4 b0 = vec4( x.xy, y.xy );\n  vec4 b1 = vec4( x.zw, y.zw );\n\n  //vec4 s0 = vec4(lessThan(b0,0.0))*2.0 - 1.0;\n  //vec4 s1 = vec4(lessThan(b1,0.0))*2.0 - 1.0;\n  vec4 s0 = floor(b0)*2.0 + 1.0;\n  vec4 s1 = floor(b1)*2.0 + 1.0;\n  vec4 sh = -step(h, vec4(0.0));\n\n  vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;\n  vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;\n\n  vec3 p0 = vec3(a0.xy,h.x);\n  vec3 p1 = vec3(a0.zw,h.y);\n  vec3 p2 = vec3(a1.xy,h.z);\n  vec3 p3 = vec3(a1.zw,h.w);\n\n//Normalise gradients\n  vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));\n  p0 *= norm.x;\n  p1 *= norm.y;\n  p2 *= norm.z;\n  p3 *= norm.w;\n\n// Mix final noise value\n  vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);\n  m = m * m;\n  return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1),\n                                dot(p2,x2), dot(p3,x3) ) );\n  }\n\n//\n// Description : Array and textureless GLSL 2D simplex noise function.\n//      Author : Ian McEwan, Ashima Arts.\n//  Maintainer : ijm\n//     Lastmod : 20110822 (ijm)\n//     License : Copyright (C) 2011 Ashima Arts. All rights reserved.\n//               Distributed under the MIT License. See LICENSE file.\n//               https://github.com/ashima/webgl-noise\n//\n\nvec3 mod289_0(vec3 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec2 mod289_0(vec2 x) {\n  return x - floor(x * (1.0 / 289.0)) * 289.0;\n}\n\nvec3 permute_0(vec3 x) {\n  return mod289_0(((x*34.0)+1.0)*x);\n}\n\nfloat snoise_0(vec2 v)\n  {\n  const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0\n                      0.366025403784439,  // 0.5*(sqrt(3.0)-1.0)\n                     -0.577350269189626,  // -1.0 + 2.0 * C.x\n                      0.024390243902439); // 1.0 / 41.0\n// First corner\n  vec2 i  = floor(v + dot(v, C.yy) );\n  vec2 x0 = v -   i + dot(i, C.xx);\n\n// Other corners\n  vec2 i1;\n  //i1.x = step( x0.y, x0.x ); // x0.x > x0.y ? 1.0 : 0.0\n  //i1.y = 1.0 - i1.x;\n  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);\n  // x0 = x0 - 0.0 + 0.0 * C.xx ;\n  // x1 = x0 - i1 + 1.0 * C.xx ;\n  // x2 = x0 - 1.0 + 2.0 * C.xx ;\n  vec4 x12 = x0.xyxy + C.xxzz;\n  x12.xy -= i1;\n\n// Permutations\n  i = mod289_0(i); // Avoid truncation effects in permutation\n  vec3 p = permute_0( permute_0( i.y + vec3(0.0, i1.y, 1.0 ))\n    + i.x + vec3(0.0, i1.x, 1.0 ));\n\n  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);\n  m = m*m ;\n  m = m*m ;\n\n// Gradients: 41 points uniformly over a line, mapped onto a diamond.\n// The ring size 17*17 = 289 is close to a multiple of 41 (41*7 = 287)\n\n  vec3 x = 2.0 * fract(p * C.www) - 1.0;\n  vec3 h = abs(x) - 0.5;\n  vec3 ox = floor(x + 0.5);\n  vec3 a0 = x - ox;\n\n// Normalise gradients implicitly by scaling m\n// Approximation of: m *= inversesqrt( a0*a0 + h*h );\n  m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );\n\n// Compute final noise value at P\n  vec3 g;\n  g.x  = a0.x  * x0.x  + h.x  * x0.y;\n  g.yz = a0.yz * x12.xz + h.yz * x12.yw;\n  return 130.0 * dot(m, g);\n}\n\nhighp float random(vec2 co)\n{\n    highp float a = 12.9898;\n    highp float b = 78.233;\n    highp float c = 43758.5453;\n    highp float dt= dot(co.xy ,vec2(a,b));\n    highp float sn= mod(dt,3.14);\n    return fract(sin(sn) * c);\n}\n\n// clang-format on\n\nvoid main() {\n  vec3 color;\n  vec2 grid = floor(uv * resolution / dpi);\n  vec2 pixel = 1. / resolution;\n  vec2 pos = (uv + vec2(1.0)) * 0.5;\n\n  // pos.x = fract(pos.x + i / max_readings);\n  vec2 textCoord = vec2(pos.x, 0.5);\n  //   vec2 textCoord = (uv * vec2(0.5, 0)) + vec2(0.5);\n\n  vec4 data = texture2D(data, textCoord);\n  float v = data.x;\n  float buckets = resolution.y / 4.;\n  // discretized\n  float dV = floor(v * buckets) / buckets;\n  // float dVLeading = floor(data.a * buckets) / buckets;\n\n  float a = 1.0;\n\n  //   vec2 pos+= (i*4.)/max_readings;\n  //   lightness = min(lightness, 1.0);\n  gl_FragColor = vec4(0.98, 1., 0.98, 0.5);\n\n  //   if (\n\n  if (pos.x < n_readings / max_readings && abs(dV - pos.y) < pixel.y * 2.0) {\n    gl_FragColor = vec4(hsv2rgb(vec3(-0.1 + v * 0.8, 0.5, 0.5)), 1.0);\n\n  } else if (abs((i / max_readings) - pos.x) < pixel.x * 4.\n\n             && abs(dV - pos.y) < pixel.y * 2.0 && dV > 0.) {\n    gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);\n\n  } else if (abs((pos.y - 0.5) * resolution.y) < 2.0 &&\n             mod(pos.x * resolution.x, 8.0) > 4.0) {\n    gl_FragColor = vec4(0., 0.1, 0., 0.4);\n  }\n\n  //  else {\n  // }\n}"
 
 /***/ }),
 
@@ -7287,4 +7140,4 @@ function getTchotchkes() {
 /***/ })
 
 }]);
-//# sourceMappingURL=0.5c967deb1d7798f38dd1.js.map
+//# sourceMappingURL=0.38bbcf9247036f653891.js.map
