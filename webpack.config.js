@@ -18,6 +18,7 @@ module.exports = {
     contentBase: dist,
     disableHostCheck: true,
     publicPath: "/",
+    writeToDisk: true,
     historyApiFallback: true
   },
 
