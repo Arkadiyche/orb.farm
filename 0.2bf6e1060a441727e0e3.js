@@ -5026,7 +5026,7 @@ var RusSpecies = Object.freeze({
   "Stone": "Камень",
   "Wood": "Дерево",
   "Water": "Вода",
-  "Aglae": "Водоросли",
+  "Algae": "Водоросли",
   "Daphnia": "Дафнии",
   "Grass": "Трава",
   "Bacteria": "Бактерии",
@@ -7135,4 +7135,4 @@ function getTchotchkes() {
 /***/ })
 
 }]);
-//# sourceMappingURL=0.dfbd774042aca9d92f05.js.map
+//# sourceMappingURL=0.2bf6e1060a441727e0e3.js.map
