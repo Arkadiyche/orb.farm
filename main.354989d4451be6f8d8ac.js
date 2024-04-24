@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + "." + {"0":"6d0494ec6ee77ba33577","1":"c7ecfafe659f48c07f1f"}[chunkId] + ".js"
+/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + "." + {"0":"dfbd774042aca9d92f05","1":"c7ecfafe659f48c07f1f"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// object to store loaded and loading wasm modules
@@ -180,7 +180,7 @@
 /******/ 				promises.push(installedWasmModuleData);
 /******/ 			else {
 /******/ 				var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 				var req = fetch(__webpack_require__.p + "" + {"./crate/pkg/sandtable_bg.wasm":"140d3c9a59af4c726969"}[wasmModuleId] + ".module.wasm");
+/******/ 				var req = fetch(__webpack_require__.p + "" + {"./crate/pkg/sandtable_bg.wasm":"41c843fcba34c992bfb6"}[wasmModuleId] + ".module.wasm");
 /******/ 				var promise;
 /******/ 				if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 					promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
@@ -252,7 +252,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "./";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
@@ -9239,9 +9239,9 @@ function (_BaseClient) {
 
 /***/ }),
 
-/***/ "./node_modules/webpack-dev-server/client/index.js?http://localhost:8082":
+/***/ "./node_modules/webpack-dev-server/client/index.js?http://localhost:8081":
 /*!*********************************************************!*\
-  !*** (webpack)-dev-server/client?http://localhost:8082 ***!
+  !*** (webpack)-dev-server/client?http://localhost:8081 ***!
   \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -9423,7 +9423,7 @@ var onSocketMessage = {
   }
 };
 socket(socketUrl, onSocketMessage);
-/* WEBPACK VAR INJECTION */}.call(this, "?http://localhost:8082"))
+/* WEBPACK VAR INJECTION */}.call(this, "?http://localhost:8081"))
 
 /***/ }),
 
@@ -10081,16 +10081,16 @@ module.exports.formatError = function(err) {
 
 /***/ 0:
 /*!*********************************************************************************!*\
-  !*** multi (webpack)-dev-server/client?http://localhost:8082 ./js/bootstrap.js ***!
+  !*** multi (webpack)-dev-server/client?http://localhost:8081 ./js/bootstrap.js ***!
   \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/akchekryzhov/orbMy/orb.farm/node_modules/webpack-dev-server/client/index.js?http://localhost:8082 */"./node_modules/webpack-dev-server/client/index.js?http://localhost:8082");
+__webpack_require__(/*! /Users/akchekryzhov/orbMy/orb.farm/node_modules/webpack-dev-server/client/index.js?http://localhost:8081 */"./node_modules/webpack-dev-server/client/index.js?http://localhost:8081");
 module.exports = __webpack_require__(/*! ./js/bootstrap.js */"./js/bootstrap.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main.98ef7c85fa3227ff1147.js.map
+//# sourceMappingURL=main.354989d4451be6f8d8ac.js.map

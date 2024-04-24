@@ -1,23 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "14a53b9c6a06dc9d2dde",
-    "url": "./1.94699d1777a19fb7a699.js"
+    "revision": "66ae0fca9e5258808d0d",
+    "url": "./0.703f6d0f9ade49b772c2.js"
   },
   {
-    "revision": "968300cd6834160ee79e",
-    "url": "./2.bd223172835a3d2dfaa2.js"
+    "revision": "f752b811006e515d8143",
+    "url": "./1.c7ecfafe659f48c07f1f.js"
   },
   {
-    "revision": "14a53b9c6a06dc9d2dde",
-    "url": "./69803d3ab527664a81ce.module.wasm"
-  },
-  {
-    "revision": "919080639f292be795445ee0112187c7",
-    "url": "./assets/2014.pdf"
-  },
-  {
-    "revision": "a493ba0aa0b8ec8068d786d7248bb92c",
-    "url": "./assets/browserconfig.xml"
+    "revision": "66ae0fca9e5258808d0d",
+    "url": "./140d3c9a59af4c726969.module.wasm"
   },
   {
     "revision": "1cd63eb39beae03326fc7f416ae0a8ec",
@@ -32,80 +24,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./assets/bubblesmall.png"
   },
   {
-    "revision": "7fbf29d8c6d6a36a9fce5232a3af4acb",
-    "url": "./assets/daphnia.gif"
-  },
-  {
-    "revision": "2e4e40397dd877a4b5ab6125b4353c30",
-    "url": "./assets/daphnia2.gif"
-  },
-  {
     "revision": "e82b4e52ec774525886820d6664e0b5b",
     "url": "./assets/daphniaAlpha.gif"
   },
   {
-    "revision": "bce7a1b8bf82d7f3fcd9a240302111be",
-    "url": "./assets/daphniaAlphaBig.gif"
-  },
-  {
-    "revision": "cbcbf2cc4ae860b57186b431ee78aa51",
-    "url": "./assets/daphniagif2.gif"
-  },
-  {
-    "revision": "0801a83800516eef7c90582692f9217d",
-    "url": "./assets/favicon.ico"
-  },
-  {
     "revision": "283ce30c80e2d1eeb6de8436bbfd577c",
     "url": "./assets/gif.worker.js"
-  },
-  {
-    "revision": "3ed59c98ec041d25145e97a30e3e3a0c",
-    "url": "./assets/html_code.html"
-  },
-  {
-    "revision": "7c756fce1f89f24b100bd4f08b36383d",
-    "url": "./assets/noise.png"
-  },
-  {
-    "revision": "74ef2aee81074b7fcac60dd1e645846b",
-    "url": "./assets/pixelmix-webfont.woff"
-  },
-  {
-    "revision": "5eb443a04d7edf327cdbeaa615391eb2",
-    "url": "./assets/pixelmix-webfont.woff2"
-  },
-  {
-    "revision": "2db009d884b526dbd3ccd985cb52de25",
-    "url": "./assets/pixelmix.ttf"
-  },
-  {
-    "revision": "183758e4fa68ade22e97aa2120a99cc9",
-    "url": "./assets/pixelmix_bold.ttf"
-  },
-  {
-    "revision": "5fb44f27fb627550abfc74af2c3a71c0",
-    "url": "./assets/rainyhearts-webfont.woff"
-  },
-  {
-    "revision": "d2b14f2f6ce71130cfd938ddd214ba12",
-    "url": "./assets/rainyhearts-webfont.woff2"
-  },
-  {
-    "revision": "069fb64d1f685b25507f0ece8707f4ab",
-    "url": "./assets/rainyhearts.ttf"
-  },
-  {
-    "revision": "d5c8d45f1b2b682730a1db3755e914e7",
-    "url": "./assets/site.webmanifest"
-  },
-  {
-    "revision": "4e285e802b7b5cf957dcce67494ef7b9",
-    "url": "./assets/thumbnail.png"
-  },
-  {
-    "revision": "c3a696af3063364bbcc9f160e144560a",
-    "url": "./assets/times-16-regular.woff"
   },
   {
     "revision": "283ce30c80e2d1eeb6de8436bbfd577c",
@@ -1488,19 +1412,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./ico/yin-yang.ico"
   },
   {
-    "revision": "e8560ce94c3b1fad163b6a4cb227cc85",
+    "revision": "6f6a91005221fd81477d17347af7fa42",
     "url": "./index.html"
   },
   {
-    "revision": "5c600358384bf41c1268",
-    "url": "./main.03dcdc211306ff440897.js"
-  },
-  {
-    "revision": "cff710e53c6cd9c29a51289f5eedd352",
-    "url": "./manifest.json"
-  },
-  {
-    "revision": "e66062c555ec72f2e329b7d2979d3bde",
-    "url": "./styles.css"
+    "revision": "1ac1be6909d43b06b1c5",
+    "url": "./main.9bbeaa93466d4afb3b26.js"
   }
 ]);
