@@ -216,6 +216,7 @@ button.selected {
   position: absolute;
   right: 0px;
   max-width: 420px;
+  min-width: 250px;
   /* display: flex; */
   /* flex-wrap: wrap; */
   z-index: 3;
@@ -532,7 +533,7 @@ h1 {
 }
 @media only screen and (max-width: 600px) {
   .info-body {
-    height: calc(75vh - 100px);
+    height: calc(50vh - 100px);
     zoom: 1.25;
   }
 }
