@@ -527,13 +527,13 @@ h1 {
   border-bottom: 2px solid var(--window-frame);
 }
 .info-body {
-  height: calc(50vh - 250px);
+  height: calc(75vh - 250px);
   overflow-y: scroll;
   zoom: 1.5;
 }
 @media only screen and (max-width: 600px) {
   .info-body {
-    height: calc(50vh - 100px);
+    height: calc(75vh - 100px);
     zoom: 1.25;
   }
 }
