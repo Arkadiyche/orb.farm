@@ -1412,7 +1412,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./ico/yin-yang.ico"
   },
   {
-    "revision": "d8942ff7e4c2801acdc715c687069415",
+    "revision": "67d13724c9ebd244438fef4474a4c2c2",
     "url": "./index.html"
   },
   {
