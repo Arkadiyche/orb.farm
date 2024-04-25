@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + "." + {"0":"59ffb602870b354af9b4","1":"c7ecfafe659f48c07f1f"}[chunkId] + ".js"
+/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + "." + {"0":"4787881f922bbc668edf","1":"c7ecfafe659f48c07f1f"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// object to store loaded and loading wasm modules
@@ -180,7 +180,7 @@
 /******/ 				promises.push(installedWasmModuleData);
 /******/ 			else {
 /******/ 				var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 				var req = fetch(__webpack_require__.p + "" + {"./crate/pkg/sandtable_bg.wasm":"140d3c9a59af4c726969"}[wasmModuleId] + ".module.wasm");
+/******/ 				var req = fetch(__webpack_require__.p + "" + {"./crate/pkg/sandtable_bg.wasm":"41c843fcba34c992bfb6"}[wasmModuleId] + ".module.wasm");
 /******/ 				var promise;
 /******/ 				if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 					promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
@@ -10093,4 +10093,4 @@ module.exports = __webpack_require__(/*! ./js/bootstrap.js */"./js/bootstrap.js"
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main.9a245aac61dec849572f.js.map
+//# sourceMappingURL=main.2e44427f7b4e6c83471f.js.map

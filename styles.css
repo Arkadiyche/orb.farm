@@ -32,7 +32,7 @@
 * {
   margin: 0;
   /* font-family: "Bitter", serif; */
-  /* font-family: "pixelmixregular", monospace; */
+  font-family: "pixelmixregular", monospace;
   /* font-family: "times16" !important; */
 
   font-smooth: never;
@@ -43,6 +43,7 @@
 html,
 body {
   overscroll-behavior-x: none;
+  font-family: "pixelmixregular", monospace;
   overscroll-behavior-y: none;
   overflow-x: hidden;
   overflow: hidden;
@@ -156,6 +157,7 @@ button {
   fill: var(--main-dark-color);
   /* line-height: 0px; */
   cursor: pointer;
+  font-family: "pixelmixregular", monospace;
   /* font-size: 16px; */
 
   /* box-shadow: inset 0 0 10px gray; */

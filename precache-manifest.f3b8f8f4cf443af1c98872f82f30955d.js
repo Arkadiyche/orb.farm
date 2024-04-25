@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7b5a3bccc5096fb6f0ed",
-    "url": "./0.59ffb602870b354af9b4.js"
+    "revision": "9d3f539957e8fda88ba2",
+    "url": "./0.4787881f922bbc668edf.js"
   },
   {
     "revision": "f752b811006e515d8143",
     "url": "./1.c7ecfafe659f48c07f1f.js"
   },
   {
-    "revision": "7b5a3bccc5096fb6f0ed",
-    "url": "./140d3c9a59af4c726969.module.wasm"
+    "revision": "9d3f539957e8fda88ba2",
+    "url": "./41c843fcba34c992bfb6.module.wasm"
   },
   {
     "revision": "1cd63eb39beae03326fc7f416ae0a8ec",
@@ -1412,11 +1412,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./ico/yin-yang.ico"
   },
   {
-    "revision": "db3f60aded2adace512cda4485d36c9a",
+    "revision": "c92620eb7e39d51dfe7041b8acd81c6c",
     "url": "./index.html"
   },
   {
-    "revision": "fd8b844220681c99149a",
-    "url": "./main.9a245aac61dec849572f.js"
+    "revision": "9f8faf1def47131df0e1",
+    "url": "./main.2e44427f7b4e6c83471f.js"
   }
 ]);
